@@ -142,6 +142,23 @@ Run password-protected embedded app with custom command-line args:
 java -jar MyKillerApp.jar --password mysecret myparam1 myparam2
 ```
 
+<h3>Access to the custom command-line args programmatically:</h3>
+
+
+```java
+
+// ...somewhere in Servlet or JSP
+
+InitialContext ctx = new InitialContext();
+
+String[] args = (String[]) ctx.lookup("java:comp/env/tommy/args"); // get custom command-line args
+String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");  // get "--app" parameter value
+
+// ...
+
+```
+
+
 <h3>F.A.Q.</h3>
 
 <strong>Q.</strong> My app failed with <code>java.lang.ClassNotFoundException: javax.servlet.\*</code>
