@@ -20,57 +20,57 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
 
 <h3>Features:</h3>
 <ul>
-	<li>Single cross-platform executable jar (starts from ~25Mb)</li>
-	<li>No dependencies</li>
-	<li>Doesn't have configuration files, instead, TommyBox uses standard standard <abbr title="Progressive Web Apps">PWA</abbr> webmanifest and standard Tomcat configuration files</li>
-	<li>
-		Operating systems:
-		<ul>
-			<li>Linux</li>
-			<li>macOS</li>
-			<li>Windows</li>
-		</ul>
-	</li>
-	<li>
-		Architectures:
-		<ul>
-			<li>x86_64</li>
-			<li>win32-x86_64</li>
-			<li>aarch64</li>
-			<li>ppc64le</li>
-		</ul>
-	</li>
-	<li>
-		Supported app forms:
-		<ul>
-			<li>Directory</li>
-			<li>WAR (or ZIP) file</li>
-			<li>URL (remote WAR (or ZIP) file)</i>
-		</ul>
-	</li>
-	<li>
-		Different app natures:
-		<ul>
-			<li>frontend-only (static content)</li>
-			<li>backend-only (pure server-side, no browser)</li>
-			<li>frontend + backend (fullstack dynamic apps)</i>
-		</ul>
-	</li>
-	<li>
-		Configurable display modes:
-		<ul>
-			<li>in-window</li>
-			<li>in-browser</li>
-			<li>fullscreen</li>
-			<li>headless</li>
-		</ul>
-	</li>
-	<li>Supports custom command line args</li>
-	<li>Supports standard password protected ZIP archives</li>
-	<li>Single and multiple windows modes</li>
-	<li>Optional custom splash screen</li>
-	<li>Optional custom context menu</li>
-	<li>Optional custom system tray icon with custom menu</li>
+    <li>Single cross-platform executable jar (starts from ~25Mb)</li>
+    <li>No dependencies</li>
+    <li>Doesn't have configuration files, instead, TommyBox uses standard standard <abbr title="Progressive Web Apps">PWA</abbr> webmanifest and standard Tomcat configuration files</li>
+    <li>
+        Operating systems:
+        <ul>
+            <li>Linux</li>
+            <li>macOS</li>
+            <li>Windows</li>
+        </ul>
+    </li>
+    <li>
+        Architectures:
+        <ul>
+            <li>x86_64</li>
+            <li>win32-x86_64</li>
+            <li>aarch64</li>
+            <li>ppc64le</li>
+        </ul>
+    </li>
+    <li>
+        Supported app forms:
+        <ul>
+            <li>Directory</li>
+            <li>WAR (or ZIP) file</li>
+            <li>URL (remote WAR (or ZIP) file)</i>
+        </ul>
+    </li>
+    <li>
+        Different app natures:
+        <ul>
+            <li>frontend-only (static content)</li>
+            <li>backend-only (pure server-side, no browser)</li>
+            <li>frontend + backend (fullstack dynamic apps)</i>
+        </ul>
+    </li>
+    <li>
+        Configurable display modes:
+        <ul>
+            <li>in-window</li>
+            <li>in-browser</li>
+            <li>fullscreen</li>
+            <li>headless</li>
+        </ul>
+    </li>
+    <li>Supports custom command line args</li>
+    <li>Supports standard password protected ZIP archives</li>
+    <li>Single and multiple windows modes</li>
+    <li>Optional custom splash screen</li>
+    <li>Optional custom context menu</li>
+    <li>Optional custom system tray icon with custom menu</li>
 </ul>
 
 
@@ -123,10 +123,10 @@ java -jar tb.jar --app MyKillerApp.zip --password mysecret
 
 <h3>Embed app:</h3>
 <ul>
-	<li>Option 1. Copy your app content into the <code>/app</code> directory of the <code>tb.jar</code>.
-	</li>
-	<li>Option 2. Pack your app as <code>app.war</code> or <code>app.zip</code> (the archive can be encrypted) and copy the archive to the root directory of the <code>tb.jar</code>.
-	</li>
+    <li>Option 1. Copy your app content into the <code>/app</code> directory of the <code>tb.jar</code>.
+    </li>
+    <li>Option 2. Pack your app as <code>app.war</code> or <code>app.zip</code> (the archive can be encrypted) and copy the archive to the root directory of the <code>tb.jar</code>.
+    </li>
 </ul>
 
 Brand your app by renaming the <code>tb.jar</code> to the <code>MyKillerApp.jar</code>.
@@ -167,16 +167,16 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
 ```js
 
 {
-    "name": "Weather Forecast",
-    "short_name": "Weather",
-    "enable_fullscreen": false,
-    "lang": "ru",
-    "trayIcon": true,
-    "window_menu": "custom", // "custom", "native", "none" (default)
+    "name":                 "Weather Forecast",
+    "short_name":           "Weather",
+    "enable_fullscreen":    false,
+    "lang":                 "ru",
+    "trayIcon":             true,
+    "window_menu":          "custom", // "custom", "native", "none" (default)
     "window_always_on_top": false,
-    "window_size": "640x280",
-    "window_x": 40,  // default is null
-    "window_y": 250, // default is null
+    "window_size":          "640x280",
+    "window_x":             40,  // default is null
+    "window_y":             250, // default is null
     "window_buttons": [
         "minimize",
         "maximize",
@@ -189,20 +189,20 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
      */
     "icons": [
         {
-            "src": "/img/weather-icon.png",
-            "type": "image/png",
+            "src":   "/img/weather-icon.png",
+            "type":  "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/img/weather-splashscreen.gif",
-            "type": "image/png",
+            "src":   "/img/weather-splashscreen.gif",
+            "type":  "image/png",
             "sizes": "512x512"
         }
     ],
-    "start_url": "/?source=pwa",
-    "scope": "/weather_app",
+    "start_url":        "/?source=pwa",
+    "scope":            "/weather_app",
     "background_color": "#3367D6",
-    "theme_color": "#3367D6",
+    "theme_color":      "#3367D6",
     
     /*
         display modes:
@@ -223,52 +223,52 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
      */
     "shortcuts": [
         {
-           "name": "USA Weather",
-           "short_name": "USA",
+           "name":        "USA Weather",
+           "short_name":  "USA",
            "description": "Open USA Weather page",
-           "url": "/countries/us/weather",
+           "url":         "/countries/us/weather",
            "icons": [
                {
-                   "src": "/img/us_weather.png",
+                   "src":   "/img/us_weather.png",
                    "sizes": "16x16"
                }
            ]
         },
         {
-           "name": "${france_weather_name}",
-           "short_name": "${france_weather_short_name}",
+           "name":        "${france_weather_name}",
+           "short_name":  "${france_weather_short_name}",
            "description": "${france_weather_description}",
-           "url": "/countries/fr/weather",
+           "url":          "/countries/fr/weather",
            "icons": [
-           	{
-           		"src": "/img/fr_weather.png",
-           		"sizes": "16x16"
-           	}
+               {
+                   "src":   "/img/fr_weather.png",
+                   "sizes": "16x16"
+               }
            ]
         },
         {
-        	"url": "separator:",
+            "url": "separator:",
         },
         {
-           "name": "Java Dialog",
-           "short_name": "Java",
+           "name":        "Java Dialog",
+           "short_name":  "Java",
            "description": "Open JOptionPane#showMessageDialog()",
-           "url": "java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")",
+           "url":         "java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")",
            "icons": [
                {
-                   "src": "/img/java.png",
+                   "src":   "/img/java.png",
                    "sizes": "16x16"
                }
            ]
         },
         {
-            "name": "JavaScript Dialog",
-            "short_name": "JavaScript",
+            "name":        "JavaScript Dialog",
+            "short_name":  "JavaScript",
             "description": "Open JOptionPane#showMessageDialog() from JavaScript",
-            "url": "js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')",
+            "url":         "js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')",
             "icons": [
                 {
-                    "src": "/img/java-script.png",
+                    "src":   "/img/java-script.png",
                     "sizes": "16x16"
                 }
             ]
@@ -277,25 +277,25 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
             "url": "separator:",
         },
         {
-           "name": "Open in New &Window…",
-           "short_name": "Window",
+           "name":        "Open in New &Window…",
+           "short_name":  "Window",
            "description": "Open this page in a new window",
-           "url": "open_in_new_window:",
+           "url":         "open_in_new_window:",
            "icons": [
                {
-                   "src": "/img/open_in_new_window.png",
+                   "src":   "/img/open_in_new_window.png",
                    "sizes": "16x16"
                }
            ]
         },
         {
-            "name": "Open in Browser",
-            "short_name": "Browser",
+            "name":        "Open in Browser",
+            "short_name":  "Browser",
             "description": "Open this page in a web browser",
-            "url": "open_in_new_window:",
+            "url":         "open_in_new_window:",
             "icons": [
                 {
-                    "src": "/img/open_in_browser.png",
+                    "src":   "/img/open_in_browser.png",
                     "sizes": "16x16"
                 }
             ]
@@ -304,13 +304,13 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
             "url": "separator:",
         },
         {
-           "name": "Full&screen\tF11",
-           "short_name": "Fullscreen",
+           "name":        "Full&screen\tF11",
+           "short_name":  "Fullscreen",
            "description": "Toggle Fullscreen mode",
-           "url": "fullscreen:",
+           "url":         "fullscreen:",
            "icons": [
                {
-                   "src": "/images/fullscreen.png",
+                   "src":   "/images/fullscreen.png",
                    "sizes": "16x16"
                }
            ]
@@ -319,83 +319,83 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
             "url": "separator:",
         },
         {
-        	"name": "&Home",
-        	"short_name": "Home",
-        	"description": "Go Home",
-        	"url": "home:",
-        	"icons": [
-        		{
-        			"src": "/images/home.png",
-        			"sizes": "16x16"
-        		}
-        	]
+            "name":        "&Home",
+            "short_name":  "Home",
+            "description": "Go Home",
+            "url":         "home:",
+            "icons": [
+                {
+                    "src":   "/images/home.png",
+                    "sizes": "16x16"
+                }
+            ]
         },
         {
-        	"name": "&Back",
-        	"short_name": "Back",
-        	"description": "Go Back",
-        	"url": "back:",
-        	"icons": [
-        		{
-        			"src": "/images/back.png",
-        			"sizes": "16x16"
-        		}
-        	]
+            "name":        "&Back",
+            "short_name":  "Back",
+            "description": "Go Back",
+            "url":         "back:",
+            "icons": [
+                {
+                    "src":   "/images/back.png",
+                    "sizes": "16x16"
+                }
+            ]
         },
         {
-        	"name": "&Forward",
-        	"short_name": "Forward",
-        	"description": "Go Forward",
-        	"url": "forward:",
-        	"icons": [
-        		{
-        			"src": "/images/forward.png",
-        			"sizes": "16x16"
-        		}
-        	]
+            "name":        "&Forward",
+            "short_name":  "Forward",
+            "description": "Go Forward",
+            "url":         "forward:",
+            "icons": [
+                {
+                    "src":   "/images/forward.png",
+                    "sizes": "16x16"
+                }
+            ]
         },
         {
-        	"url": "separator:",
+            "url": "separator:",
         },
         {
-        	"name": "&Reload",
-        	"short_name": "Reload",
-        	"description": "Reload Page",
-        	"url": "reload:",
-        	"icons": [
-        		{
-        			"src": "/images/reload.png",
-        			"sizes": "16x16"
-        		}
-        	]
+            "name":        "&Reload",
+            "short_name":  "Reload",
+            "description": "Reload Page",
+            "url":         "reload:",
+            "icons": [
+                {
+                    "src":   "/images/reload.png",
+                    "sizes": "16x16"
+                }
+            ]
         },
         {
-        	"url": "separator:",
+            "url": "separator:",
         },
         {
-        	"name": "&Quit",
-        	"short_name": "Quit",
-        	"description": "Exit Application",
-        	"url": "quit:",
-        	"icons": [
-        		{
-        			"src": "/images/reload.png",
-        			"sizes": "16x16"
-        		}
-        	]
+            "name":        "&Quit",
+            "short_name":  "Quit",
+            "description": "Exit Application",
+            "url":         "quit:",
+            "icons": [
+                {
+                    "src":   "/images/reload.png",
+                    "sizes": "16x16"
+                }
+            ]
         },
     ],
     "strings": {
-    	"en_US": {
-    		"france_weather_name" : "France Weather",
-    		"france_weather_short_name" : "France",
-    		"france_weather_description" : "Open France Weather page"
-    	},
-    	"ru": {
-    		"france_weather_name" : "Погода во Франции",
-    		"france_weather_short_name" : "Франция",
-    		"france_weather_description" : "Прогноз погоды во Франции"
-    	}				
+        "en_US": {
+            "france_weather_name":        "France Weather",
+            "france_weather_short_name":  "France",
+            "france_weather_description": "Open France Weather page"
+        },
+        "ru": {
+            "france_weather_name":        "Погода во Франции",
+            "france_weather_short_name":  "Франция",
+            "france_weather_description": "Прогноз погоды во Франции"
+        }                
     }
 }
 
