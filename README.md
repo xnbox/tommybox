@@ -123,13 +123,13 @@ java -jar tb.jar --app MyKillerApp.zip --password mysecret
 
 <h3>Embed app:</h3>
 <ul>
-	<li>Option 1. Copy your app content into the <code>/app</code> directory of the <code>tb.jar</code>
+	<li>Option 1. Copy your app content into the <code>/app</code> directory of the <code>tb.jar</code>.
 	</li>
-	<li>Option 2. Pack your app as <code>app.war</code> or <code>app.zip</code> (the archive can be encrypted) and copy the archive to the root directory of the <code>tb.jar</code>
+	<li>Option 2. Pack your app as <code>app.war</code> or <code>app.zip</code> (the archive can be encrypted) and copy the archive to the root directory of the <code>tb.jar</code>.
 	</li>
 </ul>
 
-Brand your app by renaming the <code>tb.jar</code> to the <code>MyKillerApp.jar</code>
+Brand your app by renaming the <code>tb.jar</code> to the <code>MyKillerApp.jar</code>.
 
 Run your embedded app:
 ```bash
