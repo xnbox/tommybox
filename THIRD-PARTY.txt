@@ -1,0 +1,44 @@
+List of third party products
+---------------------------------------------------------------------------------------
+
+
+NAME       : WebKit
+LICENSE    : LGPLv2.1 (GNU Lesser General Public License v2.1)
+HOME PAGE  : https://webkit.org
+DESCRIPTION: Used as browser engine. Thanks to webkit.org and WebKit developers.
+
+
+NAME       : SWT The Standard Widget Toolkit
+LICENSE    : EPL-2.0 (Eclipse Public License v2.0)
+HOME PAGE  : https://www.eclipse.org/swt
+DESCRIPTION: Used as GUI toolkit. Thanks to Eclipse foundation and SWT developers.
+
+
+NAME       : Jar-in-Jar loader
+LICENSE    : EPL-2.0 (Eclipse Public License v2.0)
+HOME PAGE  : https://www.eclipse.org
+DESCRIPTION: Used as class loader for SWT jars. Thanks to Eclipse foundation and Jar-in-Jar loader developers.
+
+
+NAME       : Mozilla Rhino
+LICENSE    : MPL-2.0 (Mozilla Public License v2.0)
+HOME PAGE  : https://github.com/mozilla/rhino
+DESCRIPTION: Used as JavaScript expression evaluator. Thanks to Mozilla foundation and Mozilla Rhino developers.
+
+
+NAME       : Zip4j
+LICENSE    : Apache License 2.0
+HOME PAGE  : https://github.com/srikanth-lingala/zip4j
+DESCRIPTION: A Java library for zip files and streams. Thanks to Srikanth Reddy Lingala.
+
+
+NAME       : Tommy
+LICENSE    : MIT License
+HOME PAGE  : https://github/xnbox/tommy
+DESCRIPTION: Used as embedded Java Application Server.
+
+
+---------------------------------------------------------------------------------------
+Please contact xnbox team by E-Mail xnbox.team@outlook.com
+or visit https://xnbox.github.io if you need additional
+information or have any questions.

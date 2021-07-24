@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Created-By: xnbox team
+Build-Version: ${build.version}
+Build-Timestamp: ${build.timestamp}
+Main-Class: org.tommy.common.JarRsrcLoaderMain
+Rsrc-Main-Class: org.tommybox.main.Main
+Rsrc-Class-Path: ./ org/lib/rhino-1.7.13.jar
+  org/lib/annotations-api.jar
+  org/lib/ecj-4.18.jar
+  org/lib/tomcat-dbcp.jar
+  org/lib/tomcat-embed-core.jar
+  org/lib/tomcat-embed-el.jar
+  org/lib/tomcat-embed-jasper.jar
+  org/lib/tomcat-embed-programmatic.jar
+  org/lib/tomcat-embed-websocket.jar
+  org/lib/jasper.jar
+  org/lib/jsoup-1.13.1.jar
+  org/lib/jackson-annotations-2.12.0-rc2.jar
+  org/lib/jackson-core-2.12.0-rc2.jar
+  org/lib/jackson-databind-2.12.0-rc2.jar
+  org/lib/zip4j-2.9.0.jar 
+SplashScreen-Image: org/xnbox/ui/res/transparent.gif
+Implementation-Title: xnbox
+Implementation-Version: 121.11
+Implementation-Vendor: xnbox team

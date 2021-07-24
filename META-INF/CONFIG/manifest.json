@@ -1,0 +1,22 @@
+{
+	"short_name": "",
+	"name": "",
+	"lang": "en",
+	"scope": "/",
+	"start_url": "/",
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff",
+	"display": "standalone",
+	"enable_fullscreen": true,
+	"trayIcon": true,
+	"window_menu": "custom",
+	"window_always_on_top": false,
+	"window_size": null,
+	"window_x": null,
+	"window_y": null,
+	"window_buttons": [
+		"minimize",
+		"maximize",
+		"close"
+	]
+}

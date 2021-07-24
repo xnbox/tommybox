@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+MIT License
+
+Copyright (c) 2021 xnbox team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+HOME:   https://xnbox.github.io
+E-Mail: xnbox.team@outlook.com
+-->
+
+<!--ANT 1.7 is required-->
+<project default="create_run_jar" name="Create tommybox jar">
+	<property name="dollar" value="$" />
+
+	<property name="build.version" value="2.14.1" />
+
+	<property name="jar" value="${basedir}/RELEASE/tb-${build.version}.jar" />
+
+	<target name="create_run_jar">
+		<tstamp>
+			<format property="build.timestamp" pattern="yyyy-MM-dd HH:mm:ss" />
+		</tstamp>
+
+		<delete dir="${java.io.tmpdir}/META-INF" />
+		<copy todir="${java.io.tmpdir}/META-INF">
+			<fileset dir="${basedir}/META-INF" />
+		</copy>
+		<replace file="${java.io.tmpdir}/META-INF/MANIFEST.MF" token="${dollar}{build.version}" value="v${build.version}" />
+		<replace file="${java.io.tmpdir}/META-INF/MANIFEST.MF" token="${dollar}{build.timestamp}" value="${build.timestamp}" />
+
+		<delete file="${jar}" failonerror="false" />
+		<zip destfile="${jar}" level="9">
+			<zipfileset prefix="META-INF" dir="${java.io.tmpdir}/META-INF" />
+
+			<fileset dir="${basedir}/bin" />
+			<fileset dir="${basedir}/../tommy/bin" includes="org/tommy/common/**/*"/>
+
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/zip4j-2.9.0.jar" />
+
+			<zipfileset prefix="org/lib" file="${basedir}/lib/jsoup-1.13.1.jar" />
+
+			<zipfileset prefix="org/lib" file="${basedir}/lib/rhino-1.7.13.jar" />
+
+			<zipfileset prefix="org/lib" file="${basedir}/lib/jackson/jackson-annotations-2.12.0-rc2.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/jackson/jackson-core-2.12.0-rc2.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/jackson/jackson-databind-2.12.0-rc2.jar" />
+
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/annotations-api.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/ecj-4.18.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-dbcp.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-core.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-el.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-jasper.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-programmatic.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-websocket.jar" />
+
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/jasper.jar" />
+
+			<zipfileset prefix="org/lib" file="${basedir}/lib/swt/swt-gtk-linux-x86_64.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/swt/swt-gtk-linux-aarch64.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/swt/swt-gtk-linux-ppc64le.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/swt/swt-cocoa-macosx-x86_64.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/swt/swt-cocoa-macosx-aarch64.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/lib/swt/swt-win32-win32-x86_64.jar" />
+
+		</zip>
+	</target>
+</project>
