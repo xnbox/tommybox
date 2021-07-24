@@ -164,238 +164,239 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
 <h3>PWA manifest.json example:</h3>
 
 
-```js
+```json
+
 {
-	"name": "Weather Forecast",
-	"short_name": "Weather",
-	"enable_fullscreen": false,
-	"lang": "ru",
-	"trayIcon": true,
-	"window_menu": "custom", // "custom", "native", "none" (default)
-	"window_always_on_top": false,
-	"window_size": "640x280",
-	"window_x": 40,  // default is null
-	"window_y": 250, // default is null
-	"window_buttons": [
-		"minimize",
-		"maximize",
-		"close"
-	],
-
-	/*
-		smallest icon used as window icon
-		largest icon used as splash screen (optional)
-	 */
-	"icons": [
-		{
-			"src": "/img/weather-icon.png",
-			"type": "image/png",
-			"sizes": "192x192"
-		},
-		{
-			"src": "/img/weather-splashscreen.gif",
-			"type": "image/png",
-			"sizes": "512x512"
-		}
-	],
-	"start_url": "/?source=pwa",
-	"scope": "/weather_app",
-	"background_color": "#3367D6",
-	"theme_color": "#3367D6",
-
-	/*
-		display modes:
-
-		"standalone" (default);
-		"minimal_ui";
-		"browser";
-		"fullscreen";
-		"minimized_window";
-		"maximized_window"; 
-		"desktop_area";
-		"headless"
-	 */
-	"display": "standalone",
-
-	/*
-		shortcuts define context menu
-	 */
-	"shortcuts": [
-		{
-			"name": "USA Weather",
-			"short_name": "USA",
-			"description": "Open USA Weather page",
-			"url": "/countries/us/weather",
-			"icons": [
-				{
-					"src": "/img/us_weather.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"name": "${france_weather_name}",
-			"short_name": "${france_weather_short_name}",
-			"description": "${france_weather_description}",
-			"url": "/countries/fr/weather",
-			"icons": [
-				{
-					"src": "/img/fr_weather.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"url": "separator:",
-		},
-		{
-			"name": "Java Dialog",
-			"short_name": "Java",
-			"description": "Open JOptionPane#showMessageDialog()",
-			"url": "java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")",
-			"icons": [
-				{
-					"src": "/img/java.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"name": "JavaScript Dialog",
-			"short_name": "JavaScript",
-			"description": "Open JOptionPane#showMessageDialog() from JavaScript",
-			"url": "js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')",
-			"icons": [
-				{
-					"src": "/img/java-script.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"url": "separator:",
-		},
-		{
-			"name": "Open in New &Window…",
-			"short_name": "Window",
-			"description": "Open this page in a new window",
-			"url": "open_in_new_window:",
-			"icons": [
-				{
-					"src": "/img/open_in_new_window.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"name": "Open in Browser",
-			"short_name": "Browser",
-			"description": "Open this page in a web browser",
-			"url": "open_in_new_window:",
-			"icons": [
-				{
-					"src": "/img/open_in_browser.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"url": "separator:",
-		},
-		{
-			"name": "Full&screen\tF11",
-			"short_name": "Fullscreen",
-			"description": "Toggle Fullscreen mode",
-			"url": "fullscreen:",
-			"icons": [
-				{
-					"src": "/images/fullscreen.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"url": "separator:",
-		},
-		{
-			"name": "&Home",
-			"short_name": "Home",
-			"description": "Go Home",
-			"url": "home:",
-			"icons": [
-				{
-					"src": "/images/home.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"name": "&Back",
-			"short_name": "Back",
-			"description": "Go Back",
-			"url": "back:",
-			"icons": [
-				{
-					"src": "/images/back.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"name": "&Forward",
-			"short_name": "Forward",
-			"description": "Go Forward",
-			"url": "forward:",
-			"icons": [
-				{
-					"src": "/images/forward.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"url": "separator:",
-		},
-		{
-			"name": "&Reload",
-			"short_name": "Reload",
-			"description": "Reload Page",
-			"url": "reload:",
-			"icons": [
-				{
-					"src": "/images/reload.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-		{
-			"url": "separator:",
-		},
-		{
-			"name": "&Quit",
-			"short_name": "Quit",
-			"description": "Exit Application",
-			"url": "quit:",
-			"icons": [
-				{
-					"src": "/images/reload.png",
-					"sizes": "16x16"
-				}
-			]
-		},
-	],
-	"strings": {
-		"en_US": {
-			"france_weather_name" : "France Weather",
-			"france_weather_short_name" : "France",
-			"france_weather_description" : "Open France Weather page"
-		},
-		"ru": {
-			"france_weather_name" : "Погода во Франции",
-			"france_weather_short_name" : "Франция",
-			"france_weather_description" : "Прогноз погоды во Франции"
-		}				
-	}
+    "name": "Weather Forecast",
+    "short_name": "Weather",
+    "enable_fullscreen": false,
+    "lang": "ru",
+    "trayIcon": true,
+    "window_menu": "custom", // "custom", "native", "none" (default)
+    "window_always_on_top": false,
+    "window_size": "640x280",
+    "window_x": 40,  // default is null
+    "window_y": 250, // default is null
+    "window_buttons": [
+        "minimize",
+        "maximize",
+        "close"
+    ],
+    
+    /*
+         smallest icon used as window icon
+         largest icon used as splash screen (optional)
+     */
+    "icons": [
+        {
+            "src": "/img/weather-icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/img/weather-splashscreen.gif",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "scope": "/weather_app",
+    "background_color": "#3367D6",
+    "theme_color": "#3367D6",
+    
+    /*
+        display modes:
+        
+        "standalone" (default);
+        "minimal_ui";
+        "browser";
+        "fullscreen";
+        "minimized_window";
+        "maximized_window"; 
+        "desktop_area";
+        "headless"
+     */
+    "display": "standalone",
+    
+    /*
+        shortcuts define context menu
+     */
+    "shortcuts": [
+        {
+           "name": "USA Weather",
+           "short_name": "USA",
+           "description": "Open USA Weather page",
+           "url": "/countries/us/weather",
+           "icons": [
+               {
+                   "src": "/img/us_weather.png",
+                   "sizes": "16x16"
+               }
+           ]
+        },
+        {
+           "name": "${france_weather_name}",
+           "short_name": "${france_weather_short_name}",
+           "description": "${france_weather_description}",
+           "url": "/countries/fr/weather",
+           "icons": [
+           	{
+           		"src": "/img/fr_weather.png",
+           		"sizes": "16x16"
+           	}
+           ]
+        },
+        {
+        	"url": "separator:",
+        },
+        {
+           "name": "Java Dialog",
+           "short_name": "Java",
+           "description": "Open JOptionPane#showMessageDialog()",
+           "url": "java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")",
+           "icons": [
+               {
+                   "src": "/img/java.png",
+                   "sizes": "16x16"
+               }
+           ]
+        },
+        {
+            "name": "JavaScript Dialog",
+            "short_name": "JavaScript",
+            "description": "Open JOptionPane#showMessageDialog() from JavaScript",
+            "url": "js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')",
+            "icons": [
+                {
+                    "src": "/img/java-script.png",
+                    "sizes": "16x16"
+                }
+            ]
+        },
+        {
+            "url": "separator:",
+        },
+        {
+           "name": "Open in New &Window…",
+           "short_name": "Window",
+           "description": "Open this page in a new window",
+           "url": "open_in_new_window:",
+           "icons": [
+               {
+                   "src": "/img/open_in_new_window.png",
+                   "sizes": "16x16"
+               }
+           ]
+        },
+        {
+            "name": "Open in Browser",
+            "short_name": "Browser",
+            "description": "Open this page in a web browser",
+            "url": "open_in_new_window:",
+            "icons": [
+                {
+                    "src": "/img/open_in_browser.png",
+                    "sizes": "16x16"
+                }
+            ]
+        },
+        {
+            "url": "separator:",
+        },
+        {
+           "name": "Full&screen\tF11",
+           "short_name": "Fullscreen",
+           "description": "Toggle Fullscreen mode",
+           "url": "fullscreen:",
+           "icons": [
+               {
+                   "src": "/images/fullscreen.png",
+                   "sizes": "16x16"
+               }
+           ]
+        },
+        {
+            "url": "separator:",
+        },
+        {
+        	"name": "&Home",
+        	"short_name": "Home",
+        	"description": "Go Home",
+        	"url": "home:",
+        	"icons": [
+        		{
+        			"src": "/images/home.png",
+        			"sizes": "16x16"
+        		}
+        	]
+        },
+        {
+        	"name": "&Back",
+        	"short_name": "Back",
+        	"description": "Go Back",
+        	"url": "back:",
+        	"icons": [
+        		{
+        			"src": "/images/back.png",
+        			"sizes": "16x16"
+        		}
+        	]
+        },
+        {
+        	"name": "&Forward",
+        	"short_name": "Forward",
+        	"description": "Go Forward",
+        	"url": "forward:",
+        	"icons": [
+        		{
+        			"src": "/images/forward.png",
+        			"sizes": "16x16"
+        		}
+        	]
+        },
+        {
+        	"url": "separator:",
+        },
+        {
+        	"name": "&Reload",
+        	"short_name": "Reload",
+        	"description": "Reload Page",
+        	"url": "reload:",
+        	"icons": [
+        		{
+        			"src": "/images/reload.png",
+        			"sizes": "16x16"
+        		}
+        	]
+        },
+        {
+        	"url": "separator:",
+        },
+        {
+        	"name": "&Quit",
+        	"short_name": "Quit",
+        	"description": "Exit Application",
+        	"url": "quit:",
+        	"icons": [
+        		{
+        			"src": "/images/reload.png",
+        			"sizes": "16x16"
+        		}
+        	]
+        },
+    ],
+    "strings": {
+    	"en_US": {
+    		"france_weather_name" : "France Weather",
+    		"france_weather_short_name" : "France",
+    		"france_weather_description" : "Open France Weather page"
+    	},
+    	"ru": {
+    		"france_weather_name" : "Погода во Франции",
+    		"france_weather_short_name" : "Франция",
+    		"france_weather_description" : "Прогноз погоды во Франции"
+    	}				
+    }
 }
 
 ```
