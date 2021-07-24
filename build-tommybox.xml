@@ -51,6 +51,7 @@ E-Mail: xnbox.team@outlook.com
 			<zipfileset prefix="META-INF" dir="${java.io.tmpdir}/META-INF" />
 
 			<fileset dir="${basedir}/bin" />
+			<fileset dir="${basedir}/../tommy/bin" includes="org/eclipse/jdt/internal/jarinjarloader/**/*"/>
 			<fileset dir="${basedir}/../tommy/bin" includes="org/tommy/common/**/*"/>
 
 			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/zip4j-2.9.0.jar" />
@@ -64,7 +65,7 @@ E-Mail: xnbox.team@outlook.com
 			<zipfileset prefix="org/lib" file="${basedir}/lib/jackson/jackson-databind-2.12.0-rc2.jar" />
 
 			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/annotations-api.jar" />
-			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/ecj-4.18.jar" />
+			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/ecj-4.20.jar" />
 			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-dbcp.jar" />
 			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-core.jar" />
 			<zipfileset prefix="org/lib" file="${basedir}/../tommy/lib/tomcat_embedded/tomcat-embed-el.jar" />
