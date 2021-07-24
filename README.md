@@ -164,7 +164,7 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
 <h3>PWA manifest.json example:</h3>
 
 
-```json
+```js
 
 {
     "name": "Weather Forecast",
