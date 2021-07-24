@@ -22,7 +22,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
 <ul>
 	<li>Single cross-platform executable jar (starts from ~25Mb)</li>
 	<li>No dependencies</li>
-	<li>Doesn't have configuration files. Instead, TommyBox uses standard standard <abbr title="Progressive Web Apps">PWA</abbr> webmanifest and standard Tomcat configuration files</li>
+	<li>Doesn't have configuration files, instead, TommyBox uses standard standard <abbr title="Progressive Web Apps">PWA</abbr> webmanifest and standard Tomcat configuration files</li>
 	<li>
 		Operating systems:
 		<ul>
