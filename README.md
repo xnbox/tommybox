@@ -2,15 +2,15 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/xnbox/tommybox/blob/master/LICENSE)
 
 <h3>About:</h3>
-<p><strong>tommybox</strong> is a standalone executable container that makes it possible to launch a static and dynamic web apps on a desktop by providing built-in server and browser functionality.</p>
+<p><strong>TommyBox</strong> is a standalone executable container that makes it possible to launch static and dynamic web apps on a desktop by providing built-in server and browser functionality.</p>
 
 <p>
 An app can be provided as a directory or packed as <abbr title="Web application ARchive">WAR</abbr> (or ZIP) archive that can contain <abbr title="Java Server Pages">JSP</abbr>, servlets, and static stuff like CSS, JavaScript, etc.
 </p>
 
 <p>
-Under the hood TommyBox build on top of <a href="https://github.com/xnbox/tommy">Tommy</a> web server and SWT browser widget.
-App can be packed as <abbr title="Web application ARchive">WAR</abbr> or ZIP archive and optionally contain <abbr title="Progressive Web Apps">PWA</abbr> manifest</li>, <abbr title="Java Server Pages">JSP</abbr>, servlets and all static stuff like CSS, JavaScript files etc.
+Under the hood, TommyBox is built on top of <a href="https://github.com/xnbox/tommy">Tommy</a> web server and SWT browser widget.
+App can be packed as <abbr title="Web application ARchive">WAR</abbr> or ZIP archive and can optionally contain <abbr title="Progressive Web Apps">PWA</abbr> manifest</li>, <abbr title="Java Server Pages">JSP</abbr>, servlets and all static stuff like CSS, JavaScript files etc.
 </p>
 
 
@@ -22,7 +22,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
 <ul>
 	<li>Single cross-platform executable jar (starts from ~25Mb)</li>
 	<li>No dependencies</li>
-	<li>No own configuration files. TommyBox reads the standard <abbr title="Progressive Web Apps">PWA</abbr> webmanifest and the standard Tomcat configuration files</li>
+	<li>Doesn't have configuration files. Instead, TommyBox uses standard standard <abbr title="Progressive Web Apps">PWA</abbr> webmanifest and standard Tomcat configuration files</li>
 	<li>
 		Operating systems:
 		<ul>
@@ -41,7 +41,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
 		</ul>
 	</li>
 	<li>
-		Supported apps forms:
+		Supported app forms:
 		<ul>
 			<li>Directory</li>
 			<li>WAR (or ZIP) file</li>
@@ -125,7 +125,7 @@ java -jar tb.jar --app MyKillerApp.zip --password mysecret
 <ul>
 	<li>Option 1. Copy your app content into the <code>/app</code> directory of the <code>tb.jar</code>
 	</li>
-	<li>Option 2. Pack your app as <code>app.war</code> or <code>app.zip</code> (the archive can be encrypted) and copy archive to the root directory of the <code>tb.jar</code>
+	<li>Option 2. Pack your app as <code>app.war</code> or <code>app.zip</code> (the archive can be encrypted) and copy the archive to the root directory of the <code>tb.jar</code>
 	</li>
 </ul>
 
@@ -166,6 +166,6 @@ String   app  = (String)   ctx.lookup("java:comp/env/tommy/app");
 
 <strong>Q.</strong> My app failed with <code>java.lang.ClassNotFoundException: javax.servlet.\*</code>
 <br>
-<strong>A.</strong> As a result of the move from Java EE to Jakarta EE, starts with v10 Apache Tomcat supports only the Jakarta EE spec. <code>javax.servlet.\*</code> is no longer supported.
-Replace the <code>javax.servlet.\*</code> imports in your code with <code>jakarta.servlet.\*</code>
+<strong>A.</strong> As a result of the move from Java EE to Jakarta EE, starting from v10, Apache Tomcat supports only the Jakarta EE spec. <code>javax.servlet.\*</code> is no longer supported.
+Replace the <code>javax.servlet.\*</code> imports in your code with <code>jakarta.servlet.\*</code>.
 
