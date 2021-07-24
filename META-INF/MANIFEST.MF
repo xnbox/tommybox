@@ -6,7 +6,7 @@ Main-Class: org.tommy.common.JarRsrcLoaderMain
 Rsrc-Main-Class: org.tommybox.main.Main
 Rsrc-Class-Path: ./ org/lib/rhino-1.7.13.jar
   org/lib/annotations-api.jar
-  org/lib/ecj-4.18.jar
+  org/lib/ecj-4.20.jar
   org/lib/tomcat-dbcp.jar
   org/lib/tomcat-embed-core.jar
   org/lib/tomcat-embed-el.jar
