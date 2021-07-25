@@ -1,10 +1,12 @@
 package org.tommybox.ui.utils;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Locale.Category;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.tommybox.main.Settings;
 import org.tommybox.webmanifest.EDisplay;
@@ -187,13 +189,22 @@ public class ParseWebManifestUtils {
 		}
 
 		if (mfStrings != null) {
-			Map<String, Object> enStrings = (Map<String, Object>) mfStrings.get("en");
-			if (enStrings != null) {
-				Map<String, Object> langStrings = (Map<String, Object>) mfStrings.get(settings.lang);
-				if (langStrings != null)
-					enStrings.putAll(langStrings);
-				settings.strings = enStrings;
+			mfStrings = new TreeMap<>(mfStrings);
+			String lang;
+			Map<String, Object> enStrings = null;
+			for (Map.Entry<String, Object> langStrings : mfStrings.entrySet()) {
+				lang = langStrings.getKey();
+				if (lang.startsWith("en")) {
+					enStrings = (Map<String, Object>) langStrings.getValue();
+					break;
+				}
 			}
+			if (enStrings == null)
+				enStrings = new HashMap<>();
+			Map<String, Object> langStrings = (Map<String, Object>) mfStrings.get(settings.lang);
+			if (langStrings != null)
+				enStrings.putAll(langStrings);
+			settings.strings = enStrings;
 		}
 	}
 

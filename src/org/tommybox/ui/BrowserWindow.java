@@ -89,12 +89,12 @@ import org.tommybox.webmanifest.EWindowMenu;
  */
 public final class BrowserWindow {
 
-	private static final String SWT_DATA_MENU_ITEM_KEY = "xnbox.url";
+	private static final String SWT_DATA_MENU_ITEM_KEY = "tommybox.url";
 
 	private static final String HTTP_HEADER_CACHE_CONTROL_NO_STORE        = "Cache-Control: no-store";
 	private static final String HTTP_HEADER_CACHE_CONTROL_MUST_REVALIDATE = "Cache-Control: must-revalidate";
 
-	private static final String DEFAULT_WINDOW_ICON = "org/xnbox/ui/res/no_tray_icon.png";
+	private static final String DEFAULT_WINDOW_ICON = "org/tommybox/ui/res/no_tray_icon.png";
 
 	private static Logger logger = LoggerUtils.createLogger(BrowserWindow.class);
 	private Display       display;
@@ -672,7 +672,7 @@ public final class BrowserWindow {
 		if (trayMenu != null)
 			for (MenuItem menuItem : trayMenu.getItems()) {
 				String shortcutUrl = (String) menuItem.getData(SWT_DATA_MENU_ITEM_KEY);
-				if (shortcutUrl.equals("fullscreen:")) {
+				if ("fullscreen:".equals(shortcutUrl)) {
 					menuItem.setSelection(!fullScreen);
 					break;
 				}
@@ -680,7 +680,7 @@ public final class BrowserWindow {
 		if (browserMenu != null) {
 			for (MenuItem menuItem : browserMenu.getItems()) {
 				String shortcutUrl = (String) menuItem.getData(SWT_DATA_MENU_ITEM_KEY);
-				if (shortcutUrl.equals("fullscreen:")) {
+				if ("fullscreen:".equals(shortcutUrl)) {
 					menuItem.setSelection(!fullScreen);
 					break;
 				}
@@ -718,10 +718,12 @@ public final class BrowserWindow {
 				menu = new Menu(parent);
 
 			MenuItem menuItem;
-			if (shortcutUrl.startsWith("separator:")) {
+			if ("separator:".equals(shortcutUrl)) {
 				menuItem = new MenuItem(menu, SWT.SEPARATOR);
 				continue;
-			} else
+			} else if ("fullscreen:".equals(shortcutUrl))
+				menuItem = new MenuItem(menu, SWT.CHECK);
+			else
 				menuItem = new MenuItem(menu, SWT.PUSH);
 
 			menuItem.setData(SWT_DATA_MENU_ITEM_KEY, shortcutUrl);
@@ -881,10 +883,11 @@ public final class BrowserWindow {
 			return "";
 		s = s.trim();
 		if (s.startsWith("${") && s.endsWith("}")) {
-			s = s.substring(2, s.length() - 1).trim();
-			s = (String) settings.strings.get(s);
-			if (s == null)
-				s = "";
+			String key    = s.substring(2, s.length() - 1).trim();
+			String result = (String) settings.strings.get(key);
+			if (result == null)
+				return s;
+			return result;
 		}
 		return s;
 	}
