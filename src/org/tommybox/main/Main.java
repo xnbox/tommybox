@@ -65,12 +65,13 @@ import org.tommy.common.utils.LoggerUtils;
 import org.tommy.common.utils.ManifestUtils;
 import org.tommy.common.utils.SystemProperties;
 import org.tommy.common.utils.ZipUtils;
+import org.tommybox.custom.WebmanifestUpdater;
 import org.tommybox.ui.BrowserWindow;
 import org.tommybox.ui.utils.InputStreamUtils;
 import org.tommybox.ui.utils.OsUtils;
-import org.tommybox.ui.utils.ParseWebManifestUtils;
 import org.tommybox.ui.utils.OsUtils.Arch;
 import org.tommybox.ui.utils.OsUtils.Os;
+import org.tommybox.ui.utils.ParseWebManifestUtils;
 import org.tommybox.webmanifest.EDisplay;
 
 import jakarta.servlet.ServletException;
@@ -87,7 +88,7 @@ The specification suggests the extension should be .webmanifest, but browsers al
 https://web.dev/add-manifest/
  */
 public class Main {
-	private static final String USER_TMP  = SystemProperties.JAVA_IO_TMPDIR;
+	private static final String USER_TMP     = SystemProperties.JAVA_IO_TMPDIR;
 	private static final String TOMMYBOX_TMP = USER_TMP + "/.tommybox";
 
 	private static String LOCALHOST_IP = "127.0.0.1"; // used for embedded server (the default)
@@ -193,7 +194,7 @@ public class Main {
 			if (is != null)
 				defaultWebmaifestBs = is.readAllBytes();
 		}
-
+		Map<String, Object> defaultWebmaifestMap = ParseWebManifestUtils.parseWebManifestToMap(defaultWebmaifestBs);
 		/*
 		 * Get port value from server.xml and update it with real port number if port was equals to zero.
 		 */
@@ -290,9 +291,12 @@ public class Main {
 		if (webmanifestBs == null)
 			webmanifestBs = ZipUtils.unzip(warPath, "manifest.json");
 
+		Map<String, Object> manifestJsonMap = ParseWebManifestUtils.parseWebManifestToMap(webmanifestBs);
+		defaultWebmaifestMap.putAll(manifestJsonMap);
+
 		Settings settings = new Settings();
-		ParseWebManifestUtils.parseWebManifest(settings, defaultWebmaifestBs);
-		ParseWebManifestUtils.parseWebManifest(settings, webmanifestBs);
+		WebmanifestUpdater.update(defaultWebmaifestMap);
+		ParseWebManifestUtils.parseWebManifest(settings, defaultWebmaifestMap);
 
 		/*
 		 * context path

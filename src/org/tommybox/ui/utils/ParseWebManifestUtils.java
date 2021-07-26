@@ -16,20 +16,16 @@ import org.tommybox.webmanifest.EWindowMenu;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 public class ParseWebManifestUtils {
-	public static void parseWebManifest(Settings settings, byte[] bs) throws JsonProcessingException {
-		final String EMPTY_MANIFEST = "{}";
-		String       manifestJson;
+	public static Map<String, Object> parseWebManifestToMap(byte[] bs) throws JsonProcessingException {
 		if (bs == null)
-			manifestJson = EMPTY_MANIFEST;
-		else {
-			manifestJson = new String(bs, StandardCharsets.UTF_8).trim();
-			manifestJson = manifestJson.trim();
-			if (manifestJson.isEmpty())
-				manifestJson = EMPTY_MANIFEST;
-		}
+			bs = new byte[0];
+		String manifestJson = new String(bs, StandardCharsets.UTF_8).trim();
+		if (manifestJson.isEmpty())
+			manifestJson = "{}";
+		return JacksonUtils.parseJsonToMap(manifestJson);
+	}
 
-		Map<String, Object> manifestJsonMap = JacksonUtils.parseJsonToMap(manifestJson);
-
+	public static void parseWebManifest(Settings settings, Map<String, Object> manifestJsonMap) throws JsonProcessingException {
 		/*
 		 * W3C Editor's Draft 01 July 2021
 		 * https://w3c.github.io/manifest
@@ -190,7 +186,7 @@ public class ParseWebManifestUtils {
 
 		if (mfStrings != null) {
 			mfStrings = new TreeMap<>(mfStrings);
-			String lang;
+			String              lang;
 			Map<String, Object> enStrings = null;
 			for (Map.Entry<String, Object> langStrings : mfStrings.entrySet()) {
 				lang = langStrings.getKey();
