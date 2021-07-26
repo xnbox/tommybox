@@ -294,8 +294,9 @@ public class Main {
 		Map<String, Object> manifestJsonMap = ParseWebManifestUtils.parseWebManifestToMap(webmanifestBs);
 		defaultWebmaifestMap.putAll(manifestJsonMap);
 
-		Settings settings = new Settings();
 		WebmanifestUpdater.update(defaultWebmaifestMap);
+
+		Settings settings = new Settings();
 		ParseWebManifestUtils.parseWebManifest(settings, defaultWebmaifestMap);
 
 		/*
