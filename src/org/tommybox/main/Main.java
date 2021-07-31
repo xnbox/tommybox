@@ -155,6 +155,8 @@ public class Main {
 			System.exit(0);
 		}
 
+		String[]                    argz   = Arrays.copyOfRange(args, specialParamCount, args.length);
+
 		/* JAR: META-INF/CONFIG/system.properties - System Properties (optional) */
 		try (InputStream is = cl.getResourceAsStream("META-INF/CONFIG/system.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
 			if (is == null)
@@ -294,7 +296,7 @@ public class Main {
 		Map<String, Object> manifestJsonMap = ParseWebManifestUtils.parseWebManifestToMap(webmanifestBs);
 		defaultWebmaifestMap.putAll(manifestJsonMap);
 
-		WebmanifestUpdater.update(defaultWebmaifestMap);
+		WebmanifestUpdater.update(app, argz, defaultWebmaifestMap);
 
 		Settings settings = new Settings();
 		ParseWebManifestUtils.parseWebManifest(settings, defaultWebmaifestMap);
@@ -382,7 +384,6 @@ public class Main {
 
 		CommonUtils.prepareTomcatConf(confPath, port);
 
-		String[]                    argz   = Arrays.copyOfRange(args, specialParamCount, args.length);
 		Tomcat                      tomcat = CommonUtils.prepareTomcat(logger, catalinaHome, app, argz);
 		org.apache.catalina.Context ctx    = tomcat.addWebapp(contextPath, warPath.toString());
 
@@ -423,7 +424,8 @@ public class Main {
 					Desktop.getDesktop().browse(new URI(pageUrl));
 			} else {
 				Path               tmpDir              = Files.createTempDirectory("java-");
-				URLClassLoader     urlClassLoader      = URLClassLoader.newInstance(new URL[] { tmpDir.toUri().toURL() });
+				tmpDir.toFile().deleteOnExit();
+				URLClassLoader     urlClassLoader      = URLClassLoader.newInstance(new URL[] { tmpDir.toUri().toURL() }, cl);
 				Map<String, Class> generatedClassesMap = new HashMap<>();
 				loadSwtJar();
 				bw = new BrowserWindow(true, tmpDir, urlClassLoader, generatedClassesMap, splashScreen, settings, contextUrl, pageUrl, pageUrl);

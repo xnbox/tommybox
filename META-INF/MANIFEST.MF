@@ -18,7 +18,7 @@ Rsrc-Class-Path: ./ org/lib/rhino-1.7.13.jar
   org/lib/jackson-annotations-2.12.0-rc2.jar
   org/lib/jackson-core-2.12.0-rc2.jar
   org/lib/jackson-databind-2.12.0-rc2.jar
-  org/lib/zip4j-2.9.0.jar 
+  org/lib/zip4j-2.9.0.jar
 SplashScreen-Image: org/xnbox/ui/res/transparent.gif
 Implementation-Title: xnbox
 Implementation-Version: 121.11

@@ -33,7 +33,7 @@ public class InvokeUtils {
 
 		Class<?> cls = generatedClassesMap.get(className);
 		if (cls == null) {
-			String sourceContent = "public class " + className + "{public static void " + methodName + "(){" + javaCode + ";}}";
+			String sourceContent = "public class " + className + "{public static void " + methodName + "(){" + (javaCode.endsWith(";") ? javaCode : javaCode + ";") + "}}";
 			Path   sourceFile    = tmpDir.resolve(className + ".java");
 			Files.writeString(sourceFile, sourceContent);
 			JAVA_COMPILER.run(null, null, null, sourceFile.toString());

@@ -91,8 +91,9 @@ public final class BrowserWindow {
 
 	private static final String SWT_DATA_MENU_ITEM_KEY = "tommybox.url";
 
-	private static final String HTTP_HEADER_CACHE_CONTROL_NO_STORE        = "Cache-Control: no-store";
-	private static final String HTTP_HEADER_CACHE_CONTROL_MUST_REVALIDATE = "Cache-Control: must-revalidate";
+	private static final String HTTP_HEADER_CACHE_CONTROL = "Cache-Control: no-cache, no-store, max-age=0, must-revalidate";
+	private static final String HTTP_HEADER_PRAGMA        = "Pragma: no-cache";
+	private static final String HTTP_HEADER_EXPIRES       = "Expires: Fri, 01 Jan 1990 00:00:00 GMT";
 
 	private static final String DEFAULT_WINDOW_ICON = "org/tommybox/ui/res/no_tray_icon.png";
 
@@ -312,7 +313,7 @@ public final class BrowserWindow {
 							Program.launch(href);
 						}
 					});
-				} else if (location.startsWith("browse:")) {
+				} else if (location.startsWith("open_in_browser:")) {
 					locationEvent.doit = false;
 					int    pos = location.indexOf(':');
 					String rel = location.substring(pos + 1).trim();
@@ -372,6 +373,13 @@ public final class BrowserWindow {
 				currentUrl = locationEvent.location;
 			}
 
+		});
+
+		browser.addProgressListener(new ProgressAdapter() {
+			public void completed(ProgressEvent event) {
+				browser.removeProgressListener(this);
+				browser.refresh(); // clear cache
+			}
 		});
 
 		browser.addProgressListener(new ProgressAdapter() {
@@ -550,7 +558,7 @@ public final class BrowserWindow {
 
 		});
 		browser.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true));
-		browser.setUrl(currentUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL_NO_STORE, HTTP_HEADER_CACHE_CONTROL_MUST_REVALIDATE });
+		browser.setUrl(currentUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL, HTTP_HEADER_PRAGMA, HTTP_HEADER_EXPIRES });
 
 		if (firstWindow)
 			if (EDisplay.DESKTOP_AREA == settings.display || EDisplay.MAXIMIZED_WINDOW == settings.display)
@@ -778,7 +786,7 @@ public final class BrowserWindow {
 							}
 						});
 					else if (shortcutUrl.equals("home:"))
-						browser.setUrl(homeUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL_NO_STORE, HTTP_HEADER_CACHE_CONTROL_MUST_REVALIDATE });
+						browser.setUrl(homeUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL, HTTP_HEADER_PRAGMA, HTTP_HEADER_EXPIRES });
 					else if (shortcutUrl.equals("back:"))
 						browser.back();
 					else if (shortcutUrl.equals("forward:"))
@@ -808,7 +816,7 @@ public final class BrowserWindow {
 						if (shortcutUrl.startsWith("/"))
 							shortcutUrl = shortcutUrl.substring(1);
 						currentUrl = contextUrl + shortcutUrl;
-						browser.setUrl(currentUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL_NO_STORE, HTTP_HEADER_CACHE_CONTROL_MUST_REVALIDATE });
+						browser.setUrl(currentUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL, HTTP_HEADER_PRAGMA, HTTP_HEADER_EXPIRES });
 					} else if (shortcutUrl.startsWith("open_in_browser:")) {
 						int pos = shortcutUrl.lastIndexOf(':');
 						shortcutUrl = shortcutUrl.substring(pos + 1);
@@ -856,7 +864,7 @@ public final class BrowserWindow {
 						});
 					} else {
 						currentUrl = contextUrl + (shortcutUrl.startsWith("/") ? shortcutUrl.substring(1) : shortcutUrl);
-						browser.setUrl(currentUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL_NO_STORE, HTTP_HEADER_CACHE_CONTROL_MUST_REVALIDATE });
+						browser.setUrl(currentUrl, null, new String[] { HTTP_HEADER_CACHE_CONTROL, HTTP_HEADER_PRAGMA, HTTP_HEADER_EXPIRES });
 					}
 				}
 			});
