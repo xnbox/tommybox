@@ -157,20 +157,20 @@ public class Main {
 
 		String[]                    argz   = Arrays.copyOfRange(args, specialParamCount, args.length);
 
-		/* JAR: META-INF/CONFIG/system.properties - System Properties (optional) */
-		try (InputStream is = cl.getResourceAsStream("META-INF/CONFIG/system.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
+		/* JAR: META-INF/system.properties - System Properties (optional) */
+		try (InputStream is = cl.getResourceAsStream("META-INF/system.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
 			if (is == null)
-				logger.log(Level.WARNING, "\"META-INF/CONFIG/system.properties\" resource (optional) is not found");
+				logger.log(Level.WARNING, "\"META-INF/system.properties\" resource (optional) is not found");
 			else
 				System.getProperties().load(reader);
 		} catch (IOException e) { // never throws
 			logger.log(Level.SEVERE, "Unknown error", e);
 		}
 
-		//		/* JAR: META-INF/CONFIG/env.properties - Environment variables (optional) */
-		//		try (InputStream is = cl.getResourceAsStream("META-INF/CONFIG/env.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
+		//		/* JAR: META-INF/env.properties - Environment variables (optional) */
+		//		try (InputStream is = cl.getResourceAsStream("META-INF/env.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
 		//			if (is == null)
-		//				logger.log(Level.WARNING, "\"META-INF/CONFIG/env.properties\" resource (optional) is not found");
+		//				logger.log(Level.WARNING, "\"META-INF/env.properties\" resource (optional) is not found");
 		//			else {
 		//				Properties properties = new Properties();
 		//				properties.load(reader);
@@ -190,9 +190,9 @@ public class Main {
 		//			logger.log(Level.SEVERE, "Unknown error", e);
 		//		}
 
-		/* JAR: META-INF/CONFIG/manifest.json - Default PWA manifest */
+		/* JAR: META-INF/manifest.json - Default PWA manifest */
 		byte[] defaultWebmaifestBs = new byte[0];
-		try (InputStream is = cl.getResourceAsStream("META-INF/CONFIG/manifest.json"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
+		try (InputStream is = cl.getResourceAsStream("META-INF/manifest.json"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
 			if (is != null)
 				defaultWebmaifestBs = is.readAllBytes();
 		}
