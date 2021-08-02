@@ -16,7 +16,7 @@ App can be packed as <abbr title="Web application ARchive">WAR</abbr> or ZIP arc
 </p>
 
 <p>
-See TommyBox in action here: <a href="https://github.com/xnbox/tommybox_demo">https://github.com/xnbox/tommybox_demo</a>
+See TommyBox in action: <a href="https://github.com/xnbox/tommybox_demo">https://github.com/xnbox/tommybox_demo</a>
 </p>
 
 <h3>Download:</h3>
