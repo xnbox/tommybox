@@ -45,16 +45,6 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
             <li>ppc64le</li>
         </ul>
     </li>
-    <li>
-		Supported web apps:
-		<ul>
-			<li>WAR files</li>
-			<li>web apps packed as ZIP archives (including standard password-protected ZIPs)</li>
-			<li>exploded web apps (local directories)</li>
-			<li>remote WAR/ZIP files (HTTP)</li>
-			<li>embedded WAR/ZIP files and directories</li>
-		</ul>
-	</li>
 	<li>Supports custom command line args</li>
     <li>
         Configurable display modes:
@@ -71,6 +61,14 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
     <li>Optional custom system tray icon with custom menu</li>
 </ul>
 
+<h3>Supported web apps:</h3>
+<ul>
+	<li>WAR files</li>
+	<li>web apps packed as ZIP archives (including standard password-protected ZIPs)</li>
+	<li>exploded web apps (local directories)</li>
+	<li>remote WAR / ZIP files (HTTP)</li>
+	<li>embedded WAR / ZIP files and directories</li>
+</ul>
 
 <h3>Command line:</h3>
 
