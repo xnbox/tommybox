@@ -98,7 +98,7 @@ java -jar tb.jar --app https://example.com/MyKillerApp.zip
 ```
 
 
-Run app from directory:
+Run exploded web app from directory:
 ```bash
 java -jar tb.jar --app MyKillerAppDir
 ```
