@@ -46,6 +46,17 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
         </ul>
     </li>
     <li>
+		Supported web apps:
+		<ul>
+			<li>WAR files</li>
+			<li>web apps packed as ZIP archives (including standard password-protected ZIPs)</li>
+			<li>exploded web apps (local directories)</li>
+			<li>remote WAR/ZIP files (HTTP)</li>
+			<li>embedded WAR/ZIP files and directories</li>
+		</ul>
+	</li>
+	<li>Supports custom command line args</li>
+    <li>
         Configurable display modes:
         <ul>
             <li>in-window</li>
@@ -54,8 +65,6 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
             <li>headless</li>
         </ul>
     </li>
-    <li>Supports custom command line args</li>
-    <li>Supports standard password protected ZIP archives</li>
     <li>Single and multiple windows modes</li>
     <li>Optional custom splash screen</li>
     <li>Optional custom context menu</li>
