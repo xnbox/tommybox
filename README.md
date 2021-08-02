@@ -88,7 +88,7 @@ java -jar tb.jar --app MyKillerApp.war
 
 Run ZIP (or WAR) file with custom command-line args:
 ```bash
-java -jar tb.jar --app MyKillerApp.war myparam1 myparam2
+java -jar tb.jar --app MyKillerApp.war myparam1 myparam2 ...
 ```
 
 
@@ -104,7 +104,7 @@ java -jar tb.jar --app MyKillerAppDir
 ```
 
 
-Run encrypted ZIP (or WAR) archive:
+Run password-protected ZIP (or WAR) archive:
 ```bash
 java -jar tb.jar --app MyKillerApp.zip --password mysecret
 ```
@@ -120,16 +120,30 @@ java -jar tb.jar --app MyKillerApp.zip --password mysecret
 
 Brand your app by renaming the <code>tb.jar</code> to the <code>MyKillerApp.jar</code>.
 
-Run your embedded app:
+
+Run embedded app:
 ```bash
 java -jar MyKillerApp.jar
 ```
 
 
+Run embedded app with custom command-line args:
+```bash
+java -jar MyKillerApp.jar myparam1 myparam2 ...
+```
+
+
+Run password-protected embedded app:
+```bash
+java -jar MyKillerApp.jar --password mysecret
+```
+
+
 Run password-protected embedded app with custom command-line args:
 ```bash
-java -jar MyKillerApp.jar --password mysecret myparam1 myparam2
+java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 ```
+
 
 <h3>Access to the custom command-line args programmatically (JNDI):</h3>
 
