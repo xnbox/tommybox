@@ -65,6 +65,7 @@ import org.tommy.common.utils.LoggerUtils;
 import org.tommy.common.utils.ManifestUtils;
 import org.tommy.common.utils.SystemProperties;
 import org.tommy.common.utils.ZipUtils;
+import org.tommy.main.CustomMain;
 import org.tommybox.custom.WebmanifestUpdater;
 import org.tommybox.ui.BrowserWindow;
 import org.tommybox.ui.utils.InputStreamUtils;
@@ -136,26 +137,33 @@ public class Main {
 			}
 		}
 
-		if (help) {
-			StringBuilder sb = new StringBuilder();
-			sb.append("\n");
-			sb.append("TommyBox " + System.getProperty("build.version") + " " + System.getProperty("build.timestamp") + ". OS: " + SystemProperties.OS_NAME + " (" + SystemProperties.OS_ARCH + "). JVM: " + SystemProperties.JAVA_JAVA_VM_NAME + " (" + SystemProperties.JAVA_JAVA_VERSION + ").\n");
-			sb.append("\n");
-			if (app != null) {
-				sb.append("Usage:\n");
+		/**
+		 * Custom command line args
+		 */
+		String[] argz = Arrays.copyOfRange(args, specialParamCount, args.length);
+
+		if (app == null)
+			if (help) {
+				StringBuilder sb = new StringBuilder();
 				sb.append("\n");
-				sb.append("java -jar xn.jar [options] [custom arg1] [custom arg2] ...\n");
+				sb.append(" 🟩 TommyBox " + System.getProperty("build.version") + '\n');
 				sb.append("\n");
-				sb.append("Options:\n");
+				sb.append(" Build: " + System.getProperty("build.timestamp") + '\n');
+				sb.append(" OS:    " + SystemProperties.OS_NAME + " (" + SystemProperties.OS_ARCH + ")" + '\n');
+				sb.append(" JVM:   " + SystemProperties.JAVA_JAVA_VM_NAME + " (" + SystemProperties.JAVA_JAVA_VERSION + ")\n");
+				sb.append("\n");
+				sb.append(" Usage:\n");
+				sb.append("\n");
+				sb.append(" java -jar tb.jar [options] [custom arg1] [custom arg2] ...\n");
+				sb.append("\n");
+				sb.append(" Options:\n");
 				sb.append("  --help                   print help message\n");
 				sb.append("  --app <file | dir | URL> run app from ZIP (or WAR) archive, directory or URL\n");
 				sb.append("  --password <password>    provide password (for encrypted ZIP (or WAR) archive)\n");
-			}
-			System.out.println(sb);
-			System.exit(0);
-		}
-
-		String[]                    argz   = Arrays.copyOfRange(args, specialParamCount, args.length);
+				System.out.println(sb);
+				System.exit(0);
+			} else
+				CustomMain.main(argz);
 
 		/* JAR: META-INF/system.properties - System Properties (optional) */
 		try (InputStream is = cl.getResourceAsStream("META-INF/system.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
@@ -423,7 +431,7 @@ public class Main {
 				if (Desktop.getDesktop().isSupported(Desktop.Action.BROWSE))
 					Desktop.getDesktop().browse(new URI(pageUrl));
 			} else {
-				Path               tmpDir              = Files.createTempDirectory("java-");
+				Path tmpDir = Files.createTempDirectory("java-");
 				tmpDir.toFile().deleteOnExit();
 				URLClassLoader     urlClassLoader      = URLClassLoader.newInstance(new URL[] { tmpDir.toUri().toURL() }, cl);
 				Map<String, Class> generatedClassesMap = new HashMap<>();

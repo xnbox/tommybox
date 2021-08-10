@@ -1,4 +1,4 @@
-# TommyBox
+# 🍥 TommyBox
 [![License MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/xnbox/tommybox/blob/master/LICENSE)
 [![Version 2.14.1](https://img.shields.io/badge/version-2.14.1-4DC71F?style=flat-square)](https://github.com/xnbox/tommybox/releases)
 
@@ -22,7 +22,7 @@ See TommyBox in action: <a href="https://github.com/xnbox/tommybox_demo">https:/
 </p>
 
 <h3>Download:</h3>
-Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.14.1/tb-2.14.1.jar">tb-2.14.1.jar</a>
+Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/v2.14.1/tb-2.14.1.jar">tb-2.14.1.jar</a>
 
 
 <h3>Features:</h3>
