@@ -68,7 +68,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/2.1
 	<li>WAR files</li>
 	<li>Web apps packed as ZIP archives (including standard password-protected ZIPs)</li>
 	<li>Exploded web apps (local directories)</li>
-	<li>Remote WAR / ZIP files (HTTP)</li>
+	<li>Remote WAR / ZIP files (on HTTP servers)</li>
 	<li>Embedded WAR / ZIP files and directories</li>
 </ul>
 
