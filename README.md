@@ -3,7 +3,7 @@
 [![Version 2.14.1](https://img.shields.io/badge/version-2.14.1-4DC71F?style=flat-square)](https://github.com/xnbox/tommybox/releases)
 
 
-<h3>About:</h3>
+<h2>About:</h2>
 <p><strong>TommyBox</strong> is a standalone executable container that makes it possible to launch static and dynamic web apps on a desktop by providing built-in server and browser functionality.
 <br>
 TommyBox is similar to Electron and NW.js.</p>
@@ -21,11 +21,11 @@ App can be packed as <abbr title="Web application ARchive">WAR</abbr> or ZIP arc
 See TommyBox in action: <a href="https://github.com/xnbox/tommybox_demo">https://github.com/xnbox/tommybox_demo</a>
 </p>
 
-<h3>Download:</h3>
+<h2>Download:</h2>
 Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/v2.14.1/tb-2.14.1.jar">tb-2.14.1.jar</a>
 
 
-<h3>Features:</h3>
+<h2>Features:</h2>
 <ul>
     <li>Single cross-platform executable jar (starts from ~25Mb)</li>
     <li>No dependencies</li>
@@ -63,7 +63,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/v2.
     <li>Optional custom system tray icon with custom menu</li>
 </ul>
 
-<h3>Supported web apps:</h3>
+<h2>Supported web apps:</h2>
 <ul>
 	<li>WAR files</li>
 	<li>Web apps packed as ZIP archives (including standard password-protected ZIPs)</li>
@@ -72,7 +72,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/v2.
 	<li>Embedded WAR / ZIP files and directories</li>
 </ul>
 
-<h3>Command line:</h3>
+<h2>Command line:</h2>
 
 
 ```text
@@ -86,7 +86,7 @@ Options:
 ```
 
 
-<h3>Run app:</h3>
+<h2>Run app:</h2>
 
 
 Run ZIP (or WAR) file:
@@ -119,7 +119,7 @@ java -jar tb.jar --app MyKillerApp.zip --password mysecret
 ```
 
 
-<h3>Embed app:</h3>
+<h2>Embed app:</h2>
 <ul>
     <li>Option 1. Copy your app content into the <code>/app</code> directory of the <code>tb.jar</code>.
     </li>
@@ -154,7 +154,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 ```
 
 
-<h3>Access to the custom command-line args and system streams programmatically (JNDI):</h3>
+<h2>Access to the custom command-line args and system streams programmatically (JNDI):</h2>
 
 
 ```java
@@ -185,7 +185,7 @@ String app = (String) ctx.lookup("java:comp/env/tommy/app");
 
 
 
-<h3>F.A.Q.</h3>
+<h2>F.A.Q.</h2>
 
 <strong>Q.</strong> My app failed with <code>java.lang.ClassNotFoundException: javax.servlet.\*</code>
 <br>
