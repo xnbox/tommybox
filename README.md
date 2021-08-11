@@ -154,7 +154,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 ```
 
 
-<h2>PWA manifest keys:</h2>
+<h2>TommyBox specific PWA manifest keys:</h2>
 <br>
 <table>
 <thead>
