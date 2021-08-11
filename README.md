@@ -47,7 +47,7 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/v2.
             <li>ppc64le</li>
         </ul>
     </li>
-	<li>Supports custom command line args</li>
+	<li>Supports custom command line args, stdin, stdout, stderr</li>
     <li>
         Configurable display modes:
         <ul>
