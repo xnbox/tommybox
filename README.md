@@ -154,6 +154,22 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 ```
 
 
+<h2>PWA manifest keys:</h2>
+
+<table>
+<tr><td>enable_fullscreen</td>   <td>boolean</td><td>true</td>                                          <td>Allow fullscreen mode</td></tr>
+<tr><td>trayIcon</td>            <td>boolean</td><td>true</td>                                          <td>Tray icon</td></tr>
+<tr><td>window_always_on_top</td><td>boolean</td><td>false</td>                                         <td>Always on top window property</td></tr>
+<tr><td>window_size</td>         <td>string</td> <td>null</td>                                          <td>Window size as string Eg.: 640x480</td></tr>
+<tr><td>window_x</td>            <td>number</td> <td>null</td>                                          <td>Window location X coordinate (in pixels)</td></tr>
+<tr><td>window_y</td>            <td>number</td> <td>null</td>                                          <td>Window location Y coordinate (in pixels)</td></tr>
+<tr><td>display</td>             <td>string</td> <td>standalone</td>                                    <td>Display mode:<br><code>standalone</code>;<br><code>minimal_ui</code><br><code>browser</code>;<br><code>fullscreen</code>;<br><code>minimized_window</code>;<br><code>maximized_window</code>;<br><code>desktop_area</code>;<br><code>headless</code></td></tr>
+<tr><td>window_buttons</td>      <td>array</td>  <td><code>["minimize", "maximize", "close"]</code></td><td>Window buttons list</td></tr>
+<tr><td>window_menu</td>         <td>string</td> <td>none</td>                                          <td>Window menu mode:<br> <code>custom</code>;<br><code>native</code>;<br><code>none</code></td></tr>
+<tr><td>strings</td>             <td>array</td>  <td>[]</td>                                            <td>I18N dictionary for custom strings</td></tr>
+</table>
+
+
 <h2>Access to the custom command-line args and system streams programmatically (JNDI):</h2>
 
 
