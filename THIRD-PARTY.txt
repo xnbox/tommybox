@@ -1,5 +1,5 @@
-List of third party products
----------------------------------------------------------------------------------------
+
+THIRD PARTY PRODUCTS
 
 
 NAME       : SWT The Standard Widget Toolkit
@@ -44,7 +44,7 @@ HOME PAGE  : https://github/xnbox/tommy
 DESCRIPTION: Used as embedded Java Application Server.
 
 
----------------------------------------------------------------------------------------
 Please contact xnbox team by E-Mail xnbox.team@outlook.com
 or visit https://xnbox.github.io if you need additional
 information or have any questions.
+
