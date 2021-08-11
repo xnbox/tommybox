@@ -158,7 +158,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 <br>
 <table>
 <thead>
-	<tr><th>Key</th>                              <th>Type</th>                <th>Default</th>                                      <th>Description</th></tr>
+	<tr><th>Key</th>                              <th>Type</th>                <th>Default value</th>                                 <th>Description</th></tr>
 </thead>
 <tbody>
 	<tr><td><code>enable_fullscreen</code></td>   <td><code>boolean</code></td><td><code>true</code></td>                             <td>Allow fullscreen mode</td></tr>
