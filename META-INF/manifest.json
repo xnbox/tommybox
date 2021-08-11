@@ -8,7 +8,7 @@
 	"theme_color": "#ffffff",
 	"display": "standalone",
 	"enable_fullscreen": true,
-	"trayIcon": true,
+	"tray_icon": true,
 	"window_menu": "custom",
 	"window_always_on_top": false,
 	"window_size": null,

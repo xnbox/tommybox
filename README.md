@@ -162,7 +162,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 </thead>
 <tbody>
 	<tr><td><code>enable_fullscreen</code></td>   <td><code>boolean</code></td><td><code>true</code></td>                             <td>Allow fullscreen mode</td></tr>
-	<tr><td><code>trayIcon</code></td>            <td><code>boolean</code></td><td><code>true</code></td>                             <td>Tray icon</td></tr>
+	<tr><td><code>tray_icon</code></td>           <td><code>boolean</code></td><td><code>true</code></td>                             <td>Tray icon</td></tr>
 	<tr><td><code>window_always_on_top</code></td><td><code>boolean</code></td><td><code>false</code></td>                            <td>Always on top window property</td></tr>
 	<tr><td><code>window_size</code></td>         <td><code>string</code></td> <td><code>null</code></td>                             <td>Window size as string Eg.: 640x480</td></tr>
 	<tr><td><code>window_x</code></td>            <td><code>number</code></td> <td><code>null</code></td>                             <td>Window location X coordinate (in pixels)</td></tr>
