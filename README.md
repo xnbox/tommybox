@@ -2,6 +2,7 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](https://github.com/xnbox/tommybox/blob/master/LICENSE)
 [![Version 2.14.1](https://img.shields.io/badge/version-2.14.1-4DC71F?style=flat-square)](https://github.com/xnbox/tommybox/releases)
 
+![TommyBox Demo App](screenshot.png)
 
 <h2>About:</h2>
 <p><strong>TommyBox</strong> is a standalone executable container that makes it possible to launch static and dynamic web apps on a desktop by providing built-in server and browser functionality.
