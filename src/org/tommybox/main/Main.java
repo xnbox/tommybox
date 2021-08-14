@@ -142,7 +142,11 @@ public class Main {
 		 */
 		String[] argz = Arrays.copyOfRange(args, specialParamCount, args.length);
 
-		if (app == null)
+		boolean embedded = CommonUtils.getWarResource() != null;
+
+		if (embedded)
+			CustomMain.main(argz);
+		else {
 			if (help) {
 				StringBuilder sb = new StringBuilder();
 				sb.append("\n");
@@ -162,8 +166,8 @@ public class Main {
 				sb.append("  --password <password>    provide password (for encrypted ZIP (or WAR) archive)\n");
 				System.out.println(sb);
 				System.exit(0);
-			} else
-				CustomMain.main(argz);
+			}
+		}
 
 		/* JAR: META-INF/system.properties - System Properties (optional) */
 		try (InputStream is = cl.getResourceAsStream("META-INF/system.properties"); Reader reader = new InputStreamReader(is, StandardCharsets.UTF_8)) {
