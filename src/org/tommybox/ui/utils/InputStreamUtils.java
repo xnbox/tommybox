@@ -28,8 +28,10 @@ E-Mail: xnbox.team@outlook.com
 package org.tommybox.ui.utils;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 public class InputStreamUtils {
@@ -43,9 +45,7 @@ public class InputStreamUtils {
 	public static InputStream createInputStreamByUrl(String contextUrl, String url) {
 		try {
 			if (url.startsWith("data:")) {
-				int    dataStartIndex = url.indexOf(",") + 1;
-				String data           = url.substring(dataStartIndex);
-				byte[] decoded        = Base64.getDecoder().decode(data);
+				byte[] decoded = parseDataUrl(url);
 				return new ByteArrayInputStream(decoded);
 			} else if (url.startsWith("https:") || url.startsWith("http:") || url.startsWith("file:"))
 				return new URL(url).openStream();
@@ -58,6 +58,35 @@ public class InputStreamUtils {
 			// ignore exception
 		}
 		return null;
+	}
+
+	/**
+	 * Parse data URL
+	 *
+	 * @param url
+	 * @param mediatypeSb
+	 * @param encodingSb
+	 * @return
+	 * @throws IOException
+	 */
+	public static byte[] parseDataUrl(String url) throws IOException {
+		// data:[<mediatype>][;base64],<data>
+		String encoding;
+		String data;
+		String s       = url.substring(5);
+		int    posSemi = s.indexOf(';');
+		int    pos     = posSemi;
+		if (pos == -1)
+			pos = s.indexOf(',');
+		int posComa = s.indexOf(',');
+		if (posSemi == -1)
+			encoding = "";
+		else
+			encoding = s.substring(posSemi + 1, posComa);
+		data = s.substring(posComa + 1);
+		if ("base64".equals(encoding))
+			return Base64.getMimeDecoder().decode(data);
+		return data.getBytes(StandardCharsets.UTF_8);
 	}
 
 }
