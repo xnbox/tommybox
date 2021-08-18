@@ -205,9 +205,9 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr></tr>
 	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in browser          </td><td><code>&lt;a href="open_in_browser:">Open in Browser&gt;&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>java:           </code></td><td>Run Java code                          </td><td><code>&lt;a href="java:">Exit&lt;/a&gt;Launch Java Code</code></td>
+	<tr><td><code>java:           </code></td><td>Launch Java code                       </td><td><code>&lt;a href="java:">Launch Java Code&gt;&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>js:             </code></td><td>Run JavaScript code                    </td><td><code>&lt;a href="js:">Exit&lt;/a&gt;Launch JavaScript Code</code></td>
+	<tr><td><code>js:             </code></td><td>Launch JavaScript code                 </td><td><code>&lt;a href="js:">Launch JavaScript Code&gt;&lt;/a&gt;</code></td>
 </tbody>
 </table>
 
