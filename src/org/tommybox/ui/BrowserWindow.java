@@ -82,10 +82,10 @@ import org.tommybox.webmanifest.EWindowMenu;
 
 /*
  * TODO
- * - BACK and Forvard keys Alt+Left arrow, Alt+Right arrow
- * - mailto: BUG !!!!!!!!!!!!!!!!
- * - default res icon should be transparent 16x16 with black border 15x15 and white border 14x14
- * - get favicon from / as browsers do
+ * - Back and Forward keys Alt+Left arrow, Alt+Right arrow
+ * - mailto: URL have SWT BUG
+ * - Default res icon should be transparent 16x16 with black border 15x15 and white border 14x14
+ * - Get favicon from / as browsers do
  */
 public final class BrowserWindow {
 
