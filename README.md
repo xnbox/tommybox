@@ -201,13 +201,13 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr></tr>
 	<tr><td><code>fullscreen:     </code></td><td>Switch to fullscreen         </td><td><code>&lt;a href="fullscreen:">Fullscreen&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open:           </code></td><td>Open the given URL in OS     </td><td><code>&lt;a href="open:">Open&lt;/a&gt;</code></td>
+	<tr><td><code>open:           </code></td><td>Open the given URL in OS     </td><td><code>&lt;a href="open:file://home/john/my.pdf">Open PDF&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in the browser</td><td><code>&lt;a href="open_in_browser:">Open in Browser&lt;/a&gt;</code></td>
+	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in the browser</td><td><code>&lt;a href="open_in_browser:http://example.com">Open in Browser&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>java:           </code></td><td>Launch Java code             </td><td><code>&lt;a href="java:">Launch Java Code&lt;/a&gt;</code></td>
+	<tr><td><code>java:           </code></td><td>Launch Java code             </td><td><code>&lt;a href="java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")">Launch Java Code&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>js:             </code></td><td>Launch JavaScript code       </td><td><code>&lt;a href="js:">Launch JavaScript Code&lt;/a&gt;</code></td>
+	<tr><td><code>js:             </code></td><td>Launch JavaScript code       </td><td><code>&lt;a href="js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')">Launch JavaScript Code&lt;/a&gt;</code></td>
 </tbody>
 </table>
 
