@@ -184,7 +184,6 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr><td><code>window_y</code></td>            <td><code>number</code></td> <td><code>null</code></td>                             <td>Window location Y coordinate (in pixels)</td></tr>
 	<tr></tr>
 	<tr><td><code>strings</code></td>             <td><code>array</code></td>  <td><code>[]</code></td>                               <td>I18N dictionary for custom strings</td></tr>
-	<tr></tr>
 </tbody>
 </table>
 <br>
