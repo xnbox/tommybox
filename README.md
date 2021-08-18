@@ -165,7 +165,6 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr><th>Key</th>                              <th>Type</th>                <th>Default value</th>                                 <th>Description</th></tr>
 </thead>
 <tbody>
-	<tr></tr>
 	<tr><td><code>display</code></td>             <td><code>string</code></td> <td><code>standalone</code></td>                       <td>Standard PWA <code>display</code> mode.<br>Possible values:<br><code>standalone</code><br><code>minimal_ui</code><br><code>browser</code><br><code>fullscreen</code><br><code>minimized_window</code> (non-standard)<br><code>maximized_window</code> (non-standard)<br><code>desktop_area</code> (non-standard)<br><code>headless</code> (non-standard)</td></tr>
 	<tr></tr>
 	<tr><td><code>enable_fullscreen</code></td>   <td><code>boolean</code></td><td><code>true</code></td>                             <td>Allow fullscreen mode</td></tr>
@@ -185,17 +184,18 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr><td><code>window_y</code></td>            <td><code>number</code></td> <td><code>null</code></td>                             <td>Window location Y coordinate (in pixels)</td></tr>
 	<tr></tr>
 	<tr><td><code>strings</code></td>             <td><code>array</code></td>  <td><code>[]</code></td>                               <td>I18N dictionary for custom strings</td></tr>
+	<tr></tr>
 </tbody>
 </table>
 <br>
 
 <h2>TommyBox specific URL protocols:</h2>
 
+<table>
 <thead>
 	<tr><th>Protocol                     </th><th>Description                            </th><th>Example</th></tr>
 </thead>
 <tbody>
-	<tr></tr>
 	<tr><td><code>quit:           </code></td><td>Exit to OS                             </td><td><code>< a href="quit:">Exit</a></code></td>
 	<tr></tr>
 	<tr><td><code>minimize:       </code></td><td>Minimize window                        </td><td><code>< a href="minimize:">Minimize</a></code></td>
