@@ -189,7 +189,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 <br>
 
 <h2>TommyBox specific URL protocols:</h2>
-
+<br>
 <table>
 <thead>
 	<tr><th width="20%">Protocol                     </th><th width="30%">Description                  </th><th>HTML Example</th></tr>
