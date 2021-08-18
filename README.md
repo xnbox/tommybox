@@ -192,7 +192,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 
 <table>
 <thead>
-	<tr><th>Protocol                     </th><th>Description                  </th><th>Example</th></tr>
+	<tr><th width="20%">Protocol                     </th><th width="30%">Description                  </th><th>Example</th></tr>
 </thead>
 <tbody>
 	<tr><td><code>quit:           </code></td><td>Exit to OS                   </td><td><code>&lt;a href="quit:">Exit&gt;&lt;/a&gt;</code></td>
