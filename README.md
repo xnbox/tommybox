@@ -195,19 +195,19 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr><th width="20%">Protocol                     </th><th width="30%">Description                  </th><th>Example</th></tr>
 </thead>
 <tbody>
-	<tr><td><code>quit:           </code></td><td>Exit to OS                   </td><td><code>&lt;a href="quit:">Exit&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>quit:           </code></td><td>Exit to OS                   </td><td><code>&lt;a href="quit:">Exit&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>minimize:       </code></td><td>Minimize window              </td><td><code>&lt;a href="minimize:">Minimize&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>minimize:       </code></td><td>Minimize window              </td><td><code>&lt;a href="minimize:">Minimize&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>fullscreen:     </code></td><td>Switch to fullscreen         </td><td><code>&lt;a href="fullscreen:">Fullscreen&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>fullscreen:     </code></td><td>Switch to fullscreen         </td><td><code>&lt;a href="fullscreen:">Fullscreen&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open:           </code></td><td>Open the given URL in OS     </td><td><code>&lt;a href="open:">Open&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>open:           </code></td><td>Open the given URL in OS     </td><td><code>&lt;a href="open:">Open&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in browser</td><td><code>&lt;a href="open_in_browser:">Open in Browser&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in browser</td><td><code>&lt;a href="open_in_browser:">Open in Browser&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>java:           </code></td><td>Launch Java code             </td><td><code>&lt;a href="java:">Launch Java Code&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>java:           </code></td><td>Launch Java code             </td><td><code>&lt;a href="java:">Launch Java Code&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>js:             </code></td><td>Launch JavaScript code       </td><td><code>&lt;a href="js:">Launch JavaScript Code&gt;&lt;/a&gt;</code></td>
+	<tr><td><code>js:             </code></td><td>Launch JavaScript code       </td><td><code>&lt;a href="js:">Launch JavaScript Code&lt;/a&gt;</code></td>
 </tbody>
 </table>
 
