@@ -192,22 +192,30 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 
 <table>
 <thead>
-	<tr><th width="20%">Protocol                     </th><th width="30%">Description                  </th><th>Example</th></tr>
+	<tr><th width="20%">Protocol                     </th><th width="30%">Description                  </th><th>HTML Example</th></tr>
 </thead>
 <tbody>
-	<tr><td><code>quit:           </code></td><td>Exit to OS                   </td><td><code>&lt;a href="quit:">Exit&lt;/a&gt;</code></td>
+	<tr><td><code>home:           </code></td><td>Home action                       </td><td><code>&lt;a href="home:">Home&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>minimize:       </code></td><td>Minimize window              </td><td><code>&lt;a href="minimize:">Minimize&lt;/a&gt;</code></td>
+	<tr><td><code>back:           </code></td><td>Back action                       </td><td><code>&lt;a href="back:">Back&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>fullscreen:     </code></td><td>Switch to fullscreen         </td><td><code>&lt;a href="fullscreen:">Fullscreen&lt;/a&gt;</code></td>
+	<tr><td><code>forward:        </code></td><td>Forward action                    </td><td><code>&lt;a href="forward:>Forward&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open:           </code></td><td>Open the given URL in OS     </td><td><code>&lt;a href="open:file://home/john/my.pdf">Open PDF&lt;/a&gt;</code></td>
+	<tr><td><code>reload:         </code></td><td>Reload action                     </td><td><code>&lt;a href="reload:">Reload&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in the browser</td><td><code>&lt;a href="open_in_browser:http://example.com">Open in Browser&lt;/a&gt;</code></td>
+	<tr><td><code>quit:           </code></td><td>Exit to OS                        </td><td><code>&lt;a href="quit:">Exit&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>java:           </code></td><td>Launch Java code             </td><td><code>&lt;a href="java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")">Launch Java Code&lt;/a&gt;</code></td>
+	<tr><td><code>minimize:       </code></td><td>Minimize window                   </td><td><code>&lt;a href="minimize:">Minimize&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>js:             </code></td><td>Launch JavaScript code       </td><td><code>&lt;a href="js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')">Launch JavaScript Code&lt;/a&gt;</code></td>
+	<tr><td><code>fullscreen:     </code></td><td>Switch to fullscreen              </td><td><code>&lt;a href="fullscreen:">Fullscreen&lt;/a&gt;</code></td>
+	<tr></tr>
+	<tr><td><code>open:           </code></td><td>Open the given URL in OS          </td><td><code>&lt;a href="open:file://home/john/my.pdf">Open PDF&lt;/a&gt;</code></td>
+	<tr></tr>
+	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in the browser </td><td><code>&lt;a href="open_in_browser:http://example.com">Open in Browser&lt;/a&gt;</code></td>
+	<tr></tr>
+	<tr><td><code>java:           </code></td><td>Launch Java code                  </td><td><code>&lt;a href="java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")">Launch Java Code&lt;/a&gt;</code></td>
+	<tr></tr>
+	<tr><td><code>js:             </code></td><td>Launch JavaScript code            </td><td><code>&lt;a href="js:javax.swing.JOptionPane.showMessageDialog(null, 'Hello, JavaScript!')">Launch JavaScript Code&lt;/a&gt;</code></td>
 </tbody>
 </table>
 
