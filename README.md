@@ -203,7 +203,7 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr></tr>
 	<tr><td><code>open:           </code></td><td>Open the given URL in OS     </td><td><code>&lt;a href="open:">Open&lt;/a&gt;</code></td>
 	<tr></tr>
-	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in browser</td><td><code>&lt;a href="open_in_browser:">Open in Browser&lt;/a&gt;</code></td>
+	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in the browser</td><td><code>&lt;a href="open_in_browser:">Open in Browser&lt;/a&gt;</code></td>
 	<tr></tr>
 	<tr><td><code>java:           </code></td><td>Launch Java code             </td><td><code>&lt;a href="java:">Launch Java Code&lt;/a&gt;</code></td>
 	<tr></tr>
