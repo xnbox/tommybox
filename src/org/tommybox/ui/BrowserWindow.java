@@ -313,6 +313,16 @@ public final class BrowserWindow {
 							Program.launch(href);
 						}
 					});
+				} else if (location.startsWith("open_in_new_window:")) {
+					locationEvent.doit = false;
+					int    pos = location.indexOf(':');
+					String rel = location.substring(pos + 1).trim();
+					String currentUrl;
+					if (rel.startsWith("https:") || rel.startsWith("http:") || rel.startsWith("file:"))
+						currentUrl = rel;
+					else
+						currentUrl = homeUrl + rel;
+					new BrowserWindow(false, tmpDir, urlClassLoader, generatedClassesMap, null, settings, contextUrl, homeUrl, currentUrl).launch();
 				} else if (location.startsWith("open_in_browser:")) {
 					locationEvent.doit = false;
 					int    pos = location.indexOf(':');
