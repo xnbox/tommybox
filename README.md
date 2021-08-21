@@ -211,6 +211,8 @@ java -jar MyKillerApp.jar --password mysecret myparam1 myparam2 ...
 	<tr></tr>
 	<tr><td><code>open:           </code></td><td>Open the given URL in OS          </td><td><code>&lt;a href="open:file://home/john/my.pdf">Open PDF&lt;/a&gt;</code></td>
 	<tr></tr>
+	<tr><td><code>open_in_new_window::</code></td><td>Open the given URL in the new window </td><td><code>&lt;a href="open_in_new_window://example.com">Open in New Window&lt;/a&gt;</code></td>
+	<tr></tr>
 	<tr><td><code>open_in_browser:</code></td><td>Open the given URL in the browser </td><td><code>&lt;a href="open_in_browser:http://example.com">Open in Browser&lt;/a&gt;</code></td>
 	<tr></tr>
 	<tr><td><code>java:           </code></td><td>Launch Java code                  </td><td><code>&lt;a href="java:javax.swing.JOptionPane.showMessageDialog(null, \"Hello, Java!\")">Launch Java Code&lt;/a&gt;</code></td>
