@@ -8,10 +8,10 @@ HOME PAGE  : https://www.eclipse.org/swt
 DESCRIPTION: Used as GUI toolkit
 
 
-NAME       : Jar-in-Jar loader
-LICENSE    : EPL-2.0 (Eclipse Public License v2.0)
-HOME PAGE  : https://www.eclipse.org
-DESCRIPTION: Used as class loader for SWT jars
+NAME       : Jackson
+LICENSE    : Apache License 2.0
+HOME PAGE  : https://github.com/FasterXML/jackson
+DESCRIPTION: Used as JSON parser and serializer
 
 
 NAME       : Mozilla Rhino
