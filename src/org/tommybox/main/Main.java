@@ -126,11 +126,15 @@ public class Main {
 		boolean help     = false;
 		for (int i = 1; i < args.length; i++) {
 			if (args[i].equals(ARGS_APP_OPTION)) {
-				app                = args[++i];
-				specialParamCount += 2;
+				if (i < args.length - 1) {
+					app                = args[++i];
+					specialParamCount += 2;
+				}
 			} else if (args[i].equals(ARGS_PASSWORD_OPTION)) {
-				password           = args[++i].toCharArray();
-				specialParamCount += 2;
+				if (i < args.length - 1) {
+					password = args[++i].toCharArray();
+					specialParamCount += 2;
+				}
 			} else if (args[i].equals(ARGS_HELP_OPTION)) {
 				help               = true;
 				specialParamCount += 1;
@@ -161,9 +165,9 @@ public class Main {
 				sb.append(" java -jar tb.jar [options] [custom arg1] [custom arg2] ...\n");
 				sb.append("\n");
 				sb.append(" Options:\n");
-				sb.append("  --help                   print help message\n");
-				sb.append("  --app <file | dir | URL> run app from ZIP (or WAR) archive, directory or URL\n");
-				sb.append("  --password <password>    provide password (for encrypted ZIP (or WAR) archive)\n");
+				sb.append("         --help                   print help message\n");
+				sb.append("         --app <file | dir | URL> run app from ZIP (or WAR) archive, directory or URL\n");
+				sb.append("         --password <password>    provide password (for encrypted ZIP (or WAR) archive)\n");
 				System.out.println(sb);
 				System.exit(0);
 			}
