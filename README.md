@@ -83,9 +83,9 @@ Latest release: <a href="https://github.com/xnbox/tommybox/releases/download/v2.
 java -jar tb.jar [options] [custom arg]...
 
 Options:
-  --help               print help message
-  --app <file|dir|URL> run app from ZIP or WAR archive, directory or URL
-  --password <string>  provide password for encrypted ZIP or WAR archive
+        --help               print help message
+        --app <file|dir|URL> run app from ZIP or WAR archive, directory or URL
+        --password <string>  provide password for encrypted ZIP or WAR archive
 ```
 
 
