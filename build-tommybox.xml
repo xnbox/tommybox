@@ -40,7 +40,8 @@ E-Mail: xnbox.team@outlook.com
 		</tstamp>
 
 		<delete dir="${java.io.tmpdir}/META-INF" />
-		<copy todir="${java.io.tmpdir}/META-INF">
+		<copy todir="${java.io.tmpdir}/META-INF" overwrite="true">
+			<fileset dir="${basedir}/../tommy/META-INF" />
 			<fileset dir="${basedir}/META-INF" />
 		</copy>
 		<replace file="${java.io.tmpdir}/META-INF/MANIFEST.MF" token="${dollar}{build.version}" value="v${build.version}" />

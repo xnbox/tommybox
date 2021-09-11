@@ -132,7 +132,7 @@ public class Main {
 				}
 			} else if (args[i].equals(ARGS_PASSWORD_OPTION)) {
 				if (i < args.length - 1) {
-					password = args[++i].toCharArray();
+					password           = args[++i].toCharArray();
 					specialParamCount += 2;
 				}
 			} else if (args[i].equals(ARGS_HELP_OPTION)) {
@@ -154,20 +154,19 @@ public class Main {
 			if (help) {
 				StringBuilder sb = new StringBuilder();
 				sb.append("\n");
-				sb.append(" 🟩 TommyBox " + System.getProperty("build.version") + '\n');
+				sb.append(" 🟩 TommyBox " + System.getProperty("build.version") + ". Build: " + System.getProperty("build.timestamp") + '\n');
 				sb.append("\n");
-				sb.append(" Build: " + System.getProperty("build.timestamp") + '\n');
-				sb.append(" OS:    " + SystemProperties.OS_NAME + " (" + SystemProperties.OS_ARCH + ")" + '\n');
-				sb.append(" JVM:   " + SystemProperties.JAVA_JAVA_VM_NAME + " (" + SystemProperties.JAVA_JAVA_VERSION + ")\n");
+				sb.append("  OS: " + SystemProperties.OS_NAME + " (" + SystemProperties.OS_ARCH + ")" + '\n');
+				sb.append(" JVM: " + SystemProperties.JAVA_JAVA_VM_NAME + " (" + SystemProperties.JAVA_JAVA_VERSION + ")\n");
 				sb.append("\n");
 				sb.append(" Usage:\n");
 				sb.append("\n");
-				sb.append(" java -jar tb.jar [options] [custom arg1] [custom arg2] ...\n");
+				sb.append(" java -jar tb.jar [options] [custom arg]...\n");
 				sb.append("\n");
 				sb.append(" Options:\n");
-				sb.append("         --help                   print help message\n");
-				sb.append("         --app <file | dir | URL> run app from ZIP (or WAR) archive, directory or URL\n");
-				sb.append("         --password <password>    provide password (for encrypted ZIP (or WAR) archive)\n");
+				sb.append("         --help               print help message\n");
+				sb.append("         --app <file|dir|URL> run app from ZIP or WAR archive, directory or URL\n");
+				sb.append("         --password <string>  provide password for encrypted ZIP or WAR archive\n");
 				System.out.println(sb);
 				System.exit(0);
 			}
@@ -268,8 +267,10 @@ public class Main {
 		Path   catalinaHomePath = catalinaHomeFile.toPath();
 		Path   webappsPath      = catalinaHomePath.resolve("webapps");
 		Files.createDirectories(webappsPath);
-		Path confPath = catalinaHomePath.resolve("conf");
+		Path confPath     = catalinaHomePath.resolve("conf");
+		Path keystorePath = confPath.resolve("keystore");
 		Files.createDirectories(confPath);
+		Files.createDirectories(keystorePath);
 
 		Path warPath = CommonUtils.getWarPath(jarFileName, webappsPath, app, password);
 		if (warPath == null) {
@@ -398,7 +399,7 @@ public class Main {
 			}
 		}
 
-		CommonUtils.prepareTomcatConf(confPath, port);
+		CommonUtils.prepareTomcatConf(confPath, keystorePath, port, null, false);
 
 		Tomcat                      tomcat = CommonUtils.prepareTomcat(logger, catalinaHome, app, argz);
 		org.apache.catalina.Context ctx    = tomcat.addWebapp(contextPath, warPath.toString());
