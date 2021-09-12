@@ -30,7 +30,7 @@ E-Mail: xnbox.team@outlook.com
 <project default="create_run_jar" name="Create tommybox jar">
 	<property name="dollar" value="$" />
 
-	<property name="build.version" value="2.14.1" />
+	<property name="build.version" value="2.14.2" />
 
 	<property name="jar" value="${basedir}/RELEASE/tb-${build.version}.jar" />
 
